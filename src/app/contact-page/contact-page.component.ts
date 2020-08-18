@@ -23,7 +23,6 @@ export class ContactPageComponent implements OnInit {
       return this.contactsService.getById(params['id'])
     }))
 
-
   }
 
 }

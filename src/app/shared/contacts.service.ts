@@ -24,7 +24,7 @@ export class ContactsService {
 
   getAll(): Observable<Contact[]> {
     return this.http.get(`${environment.fbDbUrl}/contacts.json`)
-      .pipe(map((response: {[key: string]:any}) => {
+      .pipe(map((response: {[key: string]: any}) => {
         return Object.keys(response)
           .map(key =>({
             ...response[key],
@@ -45,6 +45,10 @@ export class ContactsService {
 
   remove(id: string): Observable<void> {
     return this.http.delete<void>(`${environment.fbDbUrl}/contacts/${id}.json`)
+  }
+
+  update(contact: Contact): Observable<Contact> {
+    return this.http.patch<Contact>(`${environment.fbDbUrl}/contacts/${contact.id}.json`, contact)
   }
 
 }

@@ -12,6 +12,7 @@ import { AddContactComponent } from './add-contact/add-contact.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ListComponent } from './list/list.component';
+import { EditPageComponent } from './edit-page/edit-page.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ListComponent } from './list/list.component';
     ContactPageComponent,
     ContactComponent,
     AddContactComponent,
-    ListComponent
+    ListComponent,
+    EditPageComponent
   ],
   imports: [
     BrowserModule,

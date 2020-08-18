@@ -3,7 +3,7 @@
   <a routerLink="/" class="btn-link text-decoration-none">Back to Home</a>
   <div class="head">
   <h2>{{contact.name}}</h2>
-  <button class="btn btn-secondary">Edit</button>
+  <button class="btn btn-secondary" [routerLink]="['/edit', contact.id]">Edit</button>
   </div>
    <div class="info">
      <p>{{contact.email}}</p>
