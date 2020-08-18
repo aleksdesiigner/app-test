@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from 'rxjs';
+import {Contact} from '../shared/interfaces';
+import {ContactsService} from '../shared/contacts.service';
 
 @Component({
   selector: 'app-list',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  contacts$: Observable<Contact[]>
+
+  constructor(private contactService: ContactsService) { }
 
   ngOnInit(): void {
+    this.contacts$ = this.contactService.getAll()
   }
 
 }

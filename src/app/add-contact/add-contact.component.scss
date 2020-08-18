@@ -1,0 +1,23 @@
+form {
+  margin-bottom: 30px;
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  small {
+    color: crimson;
+  }
+
+  input {
+
+    &.ng-invalid.ng-touched {
+      border: 1px solid red;
+    }
+
+    &.ng-valid.ng-touched {
+      border: 1px solid green;
+    }
+  }
+
+}
