@@ -4,6 +4,6 @@
     <p class="card-text">{{contact.email}}</p>
     <p class="card-text">{{contact.phone}}</p>
     <p class="card-text">{{contact.address}}</p>
-    <button [routerLink]="['/contact', 12]" class="btn btn-info">Read More</button>
+    <button [routerLink]="['/contact', contact.id]" class="btn btn-info">Read More</button>
     <button class="btn btn-danger" (click)="remove(contact.id)">Delete</button>
   </div>

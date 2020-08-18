@@ -12,11 +12,17 @@ import {switchMap} from 'rxjs/operators';
 })
 export class ContactPageComponent implements OnInit {
 
+  contact$: Observable<Contact>;
+
   constructor(
     private route: ActivatedRoute,
     private contactsService: ContactsService) { }
 
   ngOnInit() {
+    this.contact$ = this.route.params.pipe(switchMap((params: Params) => {
+      return this.contactsService.getById(params['id'])
+    }))
+
 
   }
 

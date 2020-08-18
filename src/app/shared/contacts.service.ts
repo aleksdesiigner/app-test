@@ -9,8 +9,6 @@ import {map} from 'rxjs/operators';
 
 export class ContactsService {
 
-  contact$: Observable<Contact>;
-
   constructor(private http: HttpClient) {
   }
 
@@ -33,6 +31,15 @@ export class ContactsService {
             id: key
           }))
 
+      }))
+  }
+
+  getById(id: string): Observable<Contact> {
+    return this.http.get<Contact>(`${environment.fbDbUrl}/contacts/${id}.json`)
+      .pipe(map((contact: Contact) => {
+        return {
+          ...contact, id
+        }
       }))
   }
 
